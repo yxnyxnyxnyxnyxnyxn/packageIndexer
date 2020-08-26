@@ -11,7 +11,7 @@ indexer = PackageIndexer()
 if __name__ == '__main__':
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.setblocking(0)
-    server.bind(('localhost', PORT))
+    server.bind(('0.0.0.0', PORT))
     server.listen(10)
 
     inputs = [server]
