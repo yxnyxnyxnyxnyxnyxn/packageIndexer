@@ -20,6 +20,7 @@ if __name__ == '__main__':
     outputs = []
     message_queues = {}
     cnt = 1
+    print("GET HERE????")
     logging.info('starting server')
     while inputs:
         cnt += 1
