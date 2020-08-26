@@ -2,6 +2,8 @@ import queue
 import select
 import socket
 from package_indexer import PackageIndexer
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(threadName)s %(message)s')
 
 PORT = 8080
 ERROR = 'ERROR\n'
@@ -18,6 +20,7 @@ if __name__ == '__main__':
     outputs = []
     message_queues = {}
     cnt = 1
+    logging.info('starting server')
     while inputs:
         cnt += 1
         ready_to_read, ready_to_write, exceptional = select.select(inputs, outputs, [])
