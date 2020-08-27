@@ -20,7 +20,6 @@ if __name__ == '__main__':
     outputs = []
     message_queues = {}
     cnt = 1
-    print("GET HERE????")
     logging.info('starting server')
     while inputs:
         cnt += 1
@@ -37,6 +36,7 @@ if __name__ == '__main__':
                 data = s.recv(1024)
                 if data:
                     msg = data.decode('utf-8').strip()
+                    logging.info(msg)
                     command, package, dependencies = indexer.validate_msg(msg)
 
                     result = ERROR
